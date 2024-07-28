@@ -1,4 +1,4 @@
-//turn pages whenn click next or prev buttton
+ //turn pages whenn click next or prev buttton
 
 const pageTurnBtn=document.querySelectorAll('.nextpage-btn');
 
@@ -110,7 +110,7 @@ pages.forEach((_, index) =>{
 
 })
 
-// Disable right-click context menu
+ // Disable right-click context menu
  document.addEventListener('contextmenu', function(event) {
     event.preventDefault();
 });
