@@ -2,45 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Login Page</title>
     <style>
         body, html {
-            height: 100%;
+           
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
         }
 
         .bg-image {
             background-attachment: fixed;
-            margin-left: 603px;
-            top: 26.6%;
-            height: 390px;
-            width: 541px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-        }
-        .form-container {
-            background-image: url(\portfolio\mr.kk1.jpg);
-            opacity: .5;
+            background-size: cover;
+            background-position: center;
+            height: 393px;
+            width: 442px;
             position: absolute;
-            width: 500px;
-            height: 350px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 27%;
+            left: 35.6%;
+            z-index: -1;
+        }
+
+        .form-container {
             background-color: rgba(255, 255, 255, 0.8);
+            opacity: .5;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 400px;
+            margin: 40px auto;
+            margin-top: 200px;
         }
+
         .form-container h2 {
             text-align: center;
             margin-bottom: 20px;
         }
+
         .form-container input[type="text"], .form-container input[type="password"] {
             width: 100%;
             height: 50px;
@@ -51,6 +50,7 @@
             box-sizing: border-box;
             border-radius: 5px;
         }
+
         .form-container button {
             background-color: #4CAF50;
             color: white;
@@ -62,53 +62,77 @@
             height: 70px;
             border-radius: 5px;
         }
+
         .form-container button:hover {
-           background-color: rgb(13, 193, 224);
-           opacity: .5;
+            background-color: rgb(13, 193, 224);
+            opacity: .5;
+        }
+
+        /* Media queries for responsive design */
+        @media (max-width: 768px) {
+            .form-container {
+                width: 95%;
+                margin: 20px auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                width: 100%;
+                margin: 10px auto;
+                padding: 10px;
+            }
+        }
+
+        * {
+          touch-action: manipulation;
         }
     </style>
 </head>
 <body>
-    <img  class="bg-image" src="\portfolio\mr.kk1.jpg" alt="bg image ">
-        <div class="form-container">
-            <h2>Login</h2>
-            <form id="loginForm">
-                <label for="uname"><b>Username</b></label><br>
-                <input type="text" placeholder="Enter your name" name="uname" required><br>
+    <img class="bg-image" src="\portfolio\mr.kk1.jpg" alt="bg image">
+    <div class="form-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="uname"><b>Username</b></label><br>
+            <input type="text" placeholder="Enter your name" name="uname" required><br>
 
-                <label for="psw"><b>Password</b></label><br>
-                <input type="password" placeholder="Enter your name" name="psw" required><br>
+            <label for="psw"><b>Password</b></label><br>
+            <input type="password" placeholder="Enter your password" name="psw" required><br>
 
-                <button type="submit">Login</button>
-            </form>
-        </div>
-    
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
     <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
+         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault(); 
-            window.location.href = 'branch.html'; 
+            window.location.href = 'sample page.html'; 
         });
 
-         // // Disable right-click context menu
-         // document.addEventListener('contextmenu', function(event) {
-         //    event.preventDefault();
+            // Disable right-click context menu
+         document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
         });
 
-        // Prevent zooming using Ctrl + / Ctrl - and other keys
-        document.addEventListener('keydown', function(event) {
-            if (event.ctrlKey || event.metaKey) {
-                if (event.key === '+' || event.key === '-' || event.key === '0' || event.key === '=' || event.key === '_') {
-                    event.preventDefault();
-                }
-            }
-        });
+// Prevent zooming using Ctrl + / Ctrl - and other keys
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey || event.metaKey) {
+        if (event.key === '+' || event.key === '-' || event.key === '0' || event.key === '=' || event.key === '_') {
+            event.preventDefault();
+        }
+    }
+});
 
-        // Prevent zooming using mouse wheel
-        document.addEventListener('wheel', function(event) {
-            if (event.ctrlKey || event.metaKey) {
-                event.preventDefault();
-            }
-        }, { passive: false });
-    </script>
+// Prevent zooming using mouse wheel
+document.addEventListener('wheel', function(event) {
+    if (event.ctrlKey || event.metaKey) {
+        event.preventDefault();
+    }
+}, { passive: false });
+
+</script>
+
 </body>
+
 </html>
