@@ -12,8 +12,8 @@
         }
 
         .bg-image {
+            background-attachment: fixed;
             margin-left: 603px;
-            position:fixed;
             top: 26.6%;
             height: 390px;
             width: 541px;
@@ -21,6 +21,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
         }
         .form-container {
             background-image: url(\portfolio\mr.kk1.jpg);
@@ -87,26 +88,27 @@
             event.preventDefault(); 
             window.location.href = 'branch.html'; 
         });
-        // Disable right-click context menu
- document.addEventListener('contextmenu', function(event) {
-    event.preventDefault();
-});
 
-// Prevent zooming using Ctrl + / Ctrl - and other keys
-document.addEventListener('keydown', function(event) {
-    if (event.ctrlKey || event.metaKey) {
-        if (event.key === '+' || event.key === '-' || event.key === '0' || event.key === '=' || event.key === '_') {
+         // Disable right-click context menu
+         document.addEventListener('contextmenu', function(event) {
             event.preventDefault();
-        }
-    }
-});
+        });
 
-// Prevent zooming using mouse wheel
-document.addEventListener('wheel', function(event) {
-    if (event.ctrlKey || event.metaKey) {
-        event.preventDefault();
-    }
-}, { passive: false });
+        // Prevent zooming using Ctrl + / Ctrl - and other keys
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey || event.metaKey) {
+                if (event.key === '+' || event.key === '-' || event.key === '0' || event.key === '=' || event.key === '_') {
+                    event.preventDefault();
+                }
+            }
+        });
+
+        // Prevent zooming using mouse wheel
+        document.addEventListener('wheel', function(event) {
+            if (event.ctrlKey || event.metaKey) {
+                event.preventDefault();
+            }
+        }, { passive: false });
     </script>
 </body>
 </html>
