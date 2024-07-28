@@ -109,3 +109,24 @@ pages.forEach((_, index) =>{
 }, (index + 1) * 200 + 2100)
 
 })
+
+// Disable right-click context menu
+ document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
+
+// Prevent zooming using Ctrl + / Ctrl - and other keys
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey || event.metaKey) {
+        if (event.key === '+' || event.key === '-' || event.key === '0' || event.key === '=' || event.key === '_') {
+            event.preventDefault();
+        }
+    }
+});
+
+// Prevent zooming using mouse wheel
+document.addEventListener('wheel', function(event) {
+    if (event.ctrlKey || event.metaKey) {
+        event.preventDefault();
+    }
+}, { passive: false });
